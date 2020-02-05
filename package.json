@@ -49,16 +49,16 @@
     "start": "rc-tools run server",
     "pub": "rc-tools run pub --babel-runtime",
     "lint": "rc-tools run lint",
-    "lint:fix": "rc-tools run lint --fix",
-    "postinstall": "cd node_modules/react-drag-listview && npm install && npm run build"
+    "lint:fix": "rc-tools run lint --fix"
   },
   "dependencies": {
+    "gulp": "^4.0.2",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "expect.js": "~0.3.1",
     "pre-commit": "1.x",
-    "rc-tools": "^8.2.2",
+    "rc-tools": "^9.5.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
