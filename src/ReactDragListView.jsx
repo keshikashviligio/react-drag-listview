@@ -17,6 +17,7 @@ class ReactDragListView extends Component {
     handleSelector: PropTypes.string,
     nodeSelector: PropTypes.string,
     ignoreSelector: PropTypes.string,
+    skipDragStartClassName: PropTypes.string,
     enableScroll: PropTypes.bool,
     scrollSpeed: PropTypes.number,
     lineClassName: PropTypes.string,
@@ -26,6 +27,7 @@ class ReactDragListView extends Component {
   static defaultProps = {
     nodeSelector: DEFAULT_NODE_SELECTOR,
     ignoreSelector: '',
+    skipDragStartClassName: '',
     enableScroll: true,
     scrollSpeed: 10,
     handleSelector: '',
@@ -60,6 +62,10 @@ class ReactDragListView extends Component {
   }
 
   onMouseDown(e) {
+    if(this.props.skipDragStartClassName && e.target.classList.contains(this.props.skipDragStartClassName)){
+      console.log('Drag stopped');
+      return;
+    }
     const handle = this.getHandleNode(e.target);
     if (handle) {
       const target = (!this.props.handleSelector || this.props.handleSelector

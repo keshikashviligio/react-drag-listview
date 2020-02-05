@@ -8,3 +8,5 @@ npm-debug.log*
 build
 package-lock.json
 es/
+.idea
+yarn.lock
